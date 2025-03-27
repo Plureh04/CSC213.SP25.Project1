@@ -21,7 +21,12 @@ javac -d "$OUT_DIR" -sourcepath "$SRC_DIR"
 
 # Check if compilation succeeded
 if [ $? -ne 0 ]; then
-    echo "Failed, need fix"
+    echo "if compilation fails please run manually :
+mkdir -p out
+javac -d out src/main/java/edu/canisius/csc213/project1/*.java
+jar cfe uniquehands.jar edu.canisius.csc213.project1.UniqueHands -C out .
+
+After compilation is successful : java -jar uniquehands.jar"
     exit 1
 fi
 
